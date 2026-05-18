@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  registry: "quay.io"
+  repository: "nqasmi/mlflow-tracking"
+  tag: "0.2"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []

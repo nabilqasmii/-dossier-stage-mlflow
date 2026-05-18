@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  registry: "europe-west1-docker.pkg.dev"
+  repository: "MON_PROJECT_ID/MON_REPO/mlflow-tracking"
+  tag: "0.2"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []

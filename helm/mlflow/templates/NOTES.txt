@@ -1,0 +1,3 @@
+Release: {{ .Release.Name }}  Namespace: {{ .Release.Namespace }}
+kubectl port-forward svc/{{ include "mlflow.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }} -n {{ .Release.Namespace }}
+http://localhost:{{ .Values.service.port }}

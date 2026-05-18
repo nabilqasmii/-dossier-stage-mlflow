@@ -1,0 +1,42 @@
+replicaCount: 1
+
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  registry: ""
+  repository: mlflow-tracking
+  tag: "0.2"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+podAnnotations: {}
+podLabels: {}
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+container:
+  port: 5000
+
+mlflow:
+  server:
+    host: "0.0.0.0"
+    backendStoreUri: "sqlite:////app/mlflow.db"
+    defaultArtifactRoot: "/app/mlartifacts"
+
+service:
+  type: ClusterIP
+  port: 5000
+  annotations: {}
+
+resources: {}
+
+probes:
+  enabled: true
+  path: /
+  initialDelaySeconds: 30
+  readinessInitialDelaySeconds: 10
+  periodSeconds: 10
