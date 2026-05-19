@@ -7,6 +7,8 @@ on:
 
 env:
   IMAGE_NAME: mlflow-tracking
+  # Chemin image Quay = quay.io/<namespace>/<repo> (sans le "+" du robot)
+  QUAY_NAMESPACE: nqasmi
 
 jobs:
   build-and-push:
@@ -43,5 +45,5 @@ jobs:
           tags: |
             docker.io/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
             docker.io/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-            quay.io/${{ secrets.QUAY_USERNAME }}/${{ env.IMAGE_NAME }}:latest
-            quay.io/${{ secrets.QUAY_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            quay.io/${{ env.QUAY_NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
+            quay.io/${{ env.QUAY_NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
