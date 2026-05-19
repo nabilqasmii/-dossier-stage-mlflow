@@ -4,10 +4,10 @@ nameOverride: ""
 fullnameOverride: ""
 
 image:
-  registry: ""
-  repository: mlflow-tracking
-  tag: "0.2"
-  pullPolicy: IfNotPresent
+  registry: quay.io
+  repository: nqasmi/mlflow-tracking
+  tag: latest
+  pullPolicy: Always
 
 imagePullSecrets: []
 

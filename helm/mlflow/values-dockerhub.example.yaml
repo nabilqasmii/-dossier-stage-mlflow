@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  registry: quay.io
-  repository: nqasmi/mlflow-tracking
+  registry: docker.io
+  repository: qasmi12/mlflow-tracking
   tag: latest
   pullPolicy: Always
 
